@@ -36,9 +36,9 @@ class TemporaryDrawer extends React.Component {
       <div className={classes.list}>
         <List>{youTubeListItems}</List>
         <Divider />
-        <List>{mailFolderListItems}</List>
+        {/* <List>{mailFolderListItems}</List> */}
         <Divider />
-        <List>{otherMailFolderListItems}</List>
+        {/* <List>{otherMailFolderListItems}</List> */}
       </div>
     );
 
