@@ -7,52 +7,96 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton'
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const styles = {
     card: {
-        maxWidth: 345,
+        marginRight: '4px',
+        display: 'inline-block',
+        marginBottom: '24px',
+        width: 210,
+        // padding: '4px',
+    },
+    cardBottom: {
+        position: 'relative',
+        display: 'flex',
+        cursor: 'pointer',
+        flexDirection: 'column',
+    },
+    cardInfo: {
+        paddingRight: '24px',
     },
     media: {
-        height: 140,
+        height: '117px',
+        width: '210px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        padding: 0,
     },
+    styleScope: {
+        margin: '8px 0 8px',
+    },
+    title: {
+        display: '-webkit-box',
+        boxOrient: 'vertical',
+        maxHeight: '3.2rem',
+        overflow: 'hidden',
+        textDecoration: 'none',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'normal',
+        fontWeight: '500',
+        lineHeight: '1.6rem',
+    },
+    moreInfoButton: {
+        padding: 0,
+        width: '24px',
+        height: '24px',
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        marginTop: '4px',
+    }
 };
 
 function SingleYouTubeVideoCard(props) {
     const { classes } = props;
     const {title, author, views, verified, uploadDate} = props.vidInfo;
         return (
-            <Card className={classes.card}>
+            <div className={classes.card}>
                 <CardActionArea>
                     <CardMedia 
                         className={classes.media}
-                        image="balls.jpg"
-                        title="Title"
+                        image="http://mikatan.goodsmile.info/en/wp-content/uploads/-000//1/2018-08-21-52810.jpg"
                     />
-                    <CardContent>
-                        <Typography gutterBottom variant="headline" component="a">
-                            {title}
-                        </Typography>
-                    </CardContent>
                 </CardActionArea>
-                <Typography component="a">
-                            {author}
-                    </Typography>
-                <CardActions>
-                    <Typography component="span">
-                            {views} views -
-                    </Typography>
-                    <Typography component="span">
-                            48 minutes ago
-                    </Typography>
-                    {/* <Button size="small" color="primary">
-                        Share
-                    </Button>
-                    <Button size="small" color="primary">
-                        Learn More
-                    </Button> */}
-                </CardActions>
-            </Card>
+                <div className={classes.cardBottom}>
+                    <div className={classes.cardInfo}>
+                        <h3 className={classes.styleScope}>
+                            <a title={title} className={classes.title}>
+                                {title}
+                            </a>
+                        </h3>
+                    <Typography component="a">
+                                {author}
+                        </Typography>
+                    <CardActions>
+                        <Typography component="span">
+                                {views} views -
+                        </Typography>
+                        <Typography component="span">
+                                48 minutes ago
+                        </Typography>
+                    </CardActions>
+                    </div>
+                    <div className={classes.moreInfoButton}>
+                        <IconButton>
+                            <MoreVertIcon />
+                        </IconButton>
+                    </div>
+                </div>
+            </div>
         )
 }
 

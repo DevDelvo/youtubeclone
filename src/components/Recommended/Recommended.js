@@ -4,6 +4,9 @@ import SingleYoutubeVideoCard from '../SingleYoutubeVideoCard'
 import { recommendedVideos } from '../../dummyData/videos'
 
 const styles = {
+    recommendedContents: {
+        marginTop: '24px',
+    },
     header: {
         color: "black",
         display: "block",
@@ -12,6 +15,12 @@ const styles = {
         fontSize: '1.6rem',
         fontWeight: 500,
         lineHeight: '2rem',
+    },
+    items: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        // justifyContent: 'space-evenly',
     }
 }
 
@@ -20,13 +29,15 @@ class Recommended extends Component {
         const { classes } = this.props;
         console.log(recommendedVideos)
         return (
-            <div>
+            <div className={classes.recommendedContents}>
                 <span className={classes.header}>Recommended</span>
-                {
-                    recommendedVideos.map((video, index) => {
-                        return <SingleYoutubeVideoCard key={index}vidInfo={video}/>
-                    })
-                }
+                <div className={classes.items}>
+                    {
+                        recommendedVideos.map((video, index) => {
+                            return <SingleYoutubeVideoCard key={index}vidInfo={video}/>
+                        })
+                    }
+                </div>
                 
             </div>
         )
