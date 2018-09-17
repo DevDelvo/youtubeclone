@@ -5,6 +5,15 @@ import Recommended from './components/Recommended/Recommended'
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
+  navBarContainer: {
+    position: 'fixed',
+    top: 0,
+    width: '100%',
+    zIndex: 2020,
+    transform: 'translateY(0)',
+    transition: 'transform 0.3s ease',
+    height: '20px',
+  },
   sectionList: {
     display: 'flex',
     flex: 1,
@@ -16,7 +25,9 @@ class App extends Component {
     const { classes } = this.props;
     return (
       <div className="App">
-        <NavBar />
+        <div className={classes.navBarContainer}>
+          <NavBar />
+        </div>
         <div className={classes.sectionList}>
         <Recommended />
         </div>

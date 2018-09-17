@@ -16,6 +16,9 @@ const styles = {
   fullList: {
     width: 'auto',
   },
+  drawer: {
+    zIndex: 3020,
+  }
 };
 
 class TemporaryDrawer extends React.Component {
@@ -45,7 +48,7 @@ class TemporaryDrawer extends React.Component {
     return (
       <div>
         <MenuIcon onClick={this.toggleDrawer('left', true)}></MenuIcon>
-        <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+        <Drawer className={classes.drawer} open={this.state.left} onClose={this.toggleDrawer('left', false)}>
           <div
             tabIndex={0}
             role="button"

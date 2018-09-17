@@ -25,7 +25,8 @@ import VideoCallRoundedIcon from '@material-ui/icons/VideoCallRounded'
 import TemporaryDrawer from './TemporaryDrawer'
 const styles = theme => ({
   root: {
-    width: '100%',
+    display: 'block',
+    // width: '100%',
     backgroundColor: 'white',
     color: 'white',
   },
@@ -33,6 +34,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   menuButton: {
+    zIndex: 1020,
     marginLeft: -12,
     marginRight: 20,
   },
@@ -129,7 +131,7 @@ class PrimarySearchAppBar extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="fixed">
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
               <TemporaryDrawer className={classes.menuButton}/>
