@@ -49,9 +49,20 @@ const styles = {
         fontWeight: '500',
         lineHeight: '1.6rem',
     },
+    viewsAndUpload: {
+        padding: 0,
+    },
+    views: {
+        padding: 0,
+        margin: 0,
+    },
+    upload: {
+        padding: 0,
+        margin: 0,
+    },
     moreInfoButton: {
         padding: 0,
-        width: '24px',
+        width: '34px',
         height: '24px',
         position: 'absolute',
         top: 0,
@@ -81,12 +92,14 @@ function SingleYouTubeVideoCard(props) {
                     <Typography component="a">
                                 {author}
                         </Typography>
-                    <CardActions>
-                        <Typography component="span">
-                                {views} views -
+                    <CardActions className={classes.viewsAndUpload}>
+                        <Typography className={classes.views} component="span">
+                                {views}views
                         </Typography>
-                        <Typography component="span">
-                                48 minutes ago
+                        <span>•</span>
+                        <Typography className={classes.upload} component="span">
+                                {/* 48 minutes ago */}
+                                2 days ago
                         </Typography>
                     </CardActions>
                     </div>
