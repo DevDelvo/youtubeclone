@@ -126,3 +126,51 @@ export const recommendedVideos = [
         uploadDate: new Date(2018, 7, 14)
     },
 ]
+
+
+export const upLoadedVideosBy = (author) => {
+    return ([
+        {
+            title: 'Shrek\s Bizarre Adventure: Crazy Swampy Bizarre Star',
+            author,
+            views: '107,000',
+            verified: false,
+            uploadDate: new Date(2017, 11, 14)
+        },
+        {
+            title: 'Bill Burr MMP One-Shot - One-Punch Man',
+            author,
+            views: '204,000',
+            verified: true,
+            uploadDate: new Date(2017, 9, 17)
+        },
+        {
+            title: 'you\'re gonna carry that weight',
+            author,
+            views: '450,000',
+            verified: false,
+            uploadDate: new Date(2017, 9, 2)
+        },
+        {
+            title: 'Berserk | I\'m Still Here',
+            author,
+            views: '181,000',
+            verified: false,
+            uploadDate: new Date(2018, 2, 14)
+        },
+        {
+            title: 'Josuke calling himself',
+            author,
+            views: '25,000',
+            verified: false,
+            uploadDate: new Date(2017, 9, 14)
+        },
+        {
+            title: 'Golden Wind Promo and Voice Actors Announced!',
+            author, 
+            views: '127,000',
+            verified: false,
+            uploadDate: new Date(2018, 7, 14)
+        },
+    ])
+}

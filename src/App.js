@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavigationBar/NavBar';
 import Recommended from './components/Recommended/Recommended'
+import CarouselDisplay from './components/CarouselDisplay'
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
@@ -21,6 +22,11 @@ const styles = {
 }
 
 class App extends Component {
+
+  handleClose = () => {
+    console.log('close button clicked');
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -29,7 +35,10 @@ class App extends Component {
           <NavBar />
         </div>
         <div className={classes.sectionList}>
-        <Recommended />
+          <Recommended />
+        </div>
+        <div className={classes.sectionList}>
+          <CarouselDisplay handleClose={this.handleClose}/>
         </div>
       </div>
     );
