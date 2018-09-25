@@ -42,13 +42,6 @@ export const recommendedVideos = [
         uploadDate: new Date(2018, 7, 7)
     },
     {
-        title: 'content cuck? Idubbbz girlfriend exposed!!',
-        author: 'Pear Fax',
-        views: '281,000',
-        verified: false,
-        uploadDate: new Date(2018, 1, 2)
-    },
-    {
         title: 'Why I keep drawing "Art"',
         author: 'Shadbase',
         views: '651,000',

@@ -30,6 +30,10 @@ const styles = theme => ({
     backgroundColor: 'white',
     color: 'white',
   },
+  toolbar: {
+    backgroundColor: '#fafafa',
+    height: '56px',
+  },
   grow: {
     flexGrow: 1,
   },
@@ -61,17 +65,27 @@ const styles = theme => ({
     },
   },
   searchIcon: {
-    width: theme.spacing.unit * 9,
+    cursor: 'pointer',
+    width: '65px',
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: 0,
+    border: '1px solid',
+    borderRadius: '0 2px 2px 0',
+    backgroundColor: 'grey',
   },
   inputRoot: {
-    color: 'inherit',
+    color: 'grey',
     width: '100%',
+    border: "1px solid",
+    padding: "2px 6px",
+    borderRadius: '2px 0 0 2px',
+    boxShadow: "inset 0 1px 2px",
+    // backgroundColor: "white",
   },
   inputInput: {
     paddingTop: theme.spacing.unit,
@@ -132,8 +146,8 @@ class PrimarySearchAppBar extends React.Component {
     return (
       <div className={classes.root}>
         <AppBar position="fixed">
-          <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+          <Toolbar className={classes.toolbar}>
+            <IconButton className={classes.menuButton} color="grey" aria-label="Open drawer">
               <TemporaryDrawer className={classes.menuButton}/>
             </IconButton>
             <Typography className={classes.title} variant="title" color="inherit" noWrap>
@@ -144,7 +158,7 @@ class PrimarySearchAppBar extends React.Component {
                 <SearchIcon />
               </div>
               <Input
-                placeholder="Search…"
+                placeholder="Search"
                 disableUnderline
                 classes={{
                   root: classes.inputRoot,
@@ -155,18 +169,18 @@ class PrimarySearchAppBar extends React.Component {
             </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <IconButton color="inherit">
+              <IconButton color="grey">
                   <VideoCallRoundedIcon />
               </IconButton>
-              <IconButton color="inherit">
+              <IconButton color="grey">
                   <AppsIcon />
               </IconButton>
-              <IconButton color="inherit">
+              <IconButton color="grey">
                 <Badge className={classes.margin} badgeContent={4} color="secondary">
                   <MailIcon />
                 </Badge>
               </IconButton>
-              <IconButton color="inherit">
+              <IconButton color="grey">
                 <Badge className={classes.margin} badgeContent={17} color="secondary">
                   <NotificationsIcon />
                 </Badge>
@@ -175,14 +189,9 @@ class PrimarySearchAppBar extends React.Component {
                 aria-owns={isMenuOpen ? 'material-appbar' : null}
                 aria-haspopup="true"
                 onClick={this.handleProfileMenuOpen}
-                color="inherit"
+                color="grey"
               >
                 <AccountCircle />
-              </IconButton>
-            </div>
-            <div className={classes.sectionMobile}>
-              <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
-                <MoreIcon />
               </IconButton>
             </div>
           </Toolbar>
